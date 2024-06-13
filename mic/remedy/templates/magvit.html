@@ -1,0 +1,124 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magvit</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favi.png' %}">
+    <link href="{% static 'css/magvit.css' %}" rel="stylesheet">
+</head>
+<body>
+<img id="icon" src="{% static 'img/icon.png' %}">
+<nav role='navigation'>
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
+      
+      <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+      <ul id="menu">
+        <a href="{% url 'home:home' %}"><li>Home</li></a>
+        <a href="{% url 'remedy:magvit' %}"><li>Magvit</li></a>
+        <a href="{% url 'remedy:validol' %}"><li>Validol</li></a>
+      </ul>
+    </div>
+  </nav> 
+  <img id="yellow" src="{% static 'img/yelorg.png' %}">
+  <img id="magvit" src="{% static 'img/magvit.png' %}">
+  <p id="head">Pharmacological action</p>
+  <img id="butterfly" src="{% static 'img/butterfly.png' %}">
+  <p id="infoone"><b>Magnesium</b> is a vital trace element in all the tissues and necessary for cells, 
+    participates to main metabolic reactions, in particular to nervous impulse transfer 
+    and contraction, it is part of more than 300 enzymes.</p>
+  <div id="infosec">
+    <img id="oily" src="{% static 'img/oily.png' %}">
+  <p id="infotwo"><b>Vitamin В6 participates in main metabolic processes</b>, in particular 
+    <b>nervous system</b>, it enhances lipid metabolism in atherosclerosis. 
+    It is necessary to activate phosphorylases, to form neurotransmitters, 
+    aminobutyric acid, glycine, serotonin. Magnesium and Vitamin B6 complement 
+    pharmacologic action of each other. Vitamin В6 <b>enhances magnesium extraction 
+    from gastrointestinal tract, increases magnesium concentration in cells.</b></p>
+</div>
+<p id="treat"><b>Treatment of magnesium deficiency</b> and the following symptoms:</p>
+<img id="anx" src="{% static 'img/anx.png' %}">
+<p id="sympone">nervousness, irritability, mild anxiety, transient fatigue, minor sleep disorder;</p>
+<img id="life" src="{% static 'img/life.png' %}">
+<p id="symptwo">manifestation of anxiety in the form of gastrointestinal spasms, rapid heartbeat (with a healthy heart);</p>
+<img id="cra" src="{% static 'img/cra.png' %}">
+<p id="sympthree">muscle cramps, tingling.</p>
+<img id="pain" src="{% static 'img/pain.png' %}">
+<p id="get">Get tested</p>
+<p id="mag">for magnesium deficiency</p>
+<div id="blockinf">
+<p>High blood pressure</p>
+<img src="{% static 'img/ln.png' %}">
+<p>Migraine headaches & fatigue </p>
+<img src="{% static 'img/ln.png' %}">
+<p>Poor blood sugar control</p>
+<img src="{% static 'img/ln.png' %}">
+<p>Muscle cramps and spasms </p>
+<img src="{% static 'img/ln.png' %}">
+<p>Anxiety and depression </p>
+<img src="{% static 'img/ln.png' %}">
+<p>Muscle weakness & Insomnia </p>
+<img src="{% static 'img/ln.png' %}">
+<p>Abnormal heart rhythm  </p>
+<img src="{% static 'img/ln.png' %}">
+<p>Numbness or tingling </p>
+<img src="{% static 'img/ln.png' %}">
+</div>
+<img id="infogr" src="{% static 'img/infogr.png' %}">
+<p id="testim">Testimonials</p>
+<div id="slider">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="radio" name="slider" id="slide4">
+    <div id="slides">
+       <div id="overflow">
+          <div class="inner">
+             <div class="slide slide_1">
+                <div class="slide-content">
+                    <p id="testinfo">«Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation.»</p>
+                   <img id="slideimg" src="{% static 'img/pain.png' %}">
+                    <p id="testinfo">Jane Doe</p>
+                    <p id="testinfo">San Diego Personal Branding Manager</p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div id="controls">
+    </div>
+    <div id="bullets">
+       <label for="slide1"></label>
+       <label for="slide2"></label>
+       <label for="slide3"></label>
+       <label for="slide4"></label>
+    </div>
+ </div>
+ <img id="footimg" src="{% static 'img/foot.png' %}">
+ <a href="mailto:info@mic.by"> <img id="phone" src="{% static 'img/tlph.png' %}"></a>
+   <a href="https://www.instagram.com/minskintercaps?igsh=MTI1aHJmeGdoNTZ5" target="blank"><img id="inst" src="{% static 'img/inst.png' %}"></a>
+</body>
+</html>

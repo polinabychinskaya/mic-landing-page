@@ -1,0 +1,138 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favi.png' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<img id="icon" src="{% static 'img/icon.png' %}">
+<nav role='navigation'>
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
+      
+      <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+      <ul id="menu">
+        <a href="{% url 'home:home' %}"><li>Home</li></a>
+        <a href="{% url 'remedy:magvit' %}"><li>Magvit</li></a>
+        <a href="{% url 'remedy:validol' %}"><li>Validol</li></a>
+      </ul>
+    </div>
+  </nav> 
+  <img id="greengr" src="{% static 'img/greengr.png' %}">
+  <img id="hand" src="{% static 'img/hand.png' %}">
+  <p id="intro"><i>‘We do our best to <b>improve social welfare.</b> Therefore, we produce 
+    <b>only effective, safe and affordable drugs</b> for the treatment and 
+    prevention of diseases’</i></p>
+  <a href="#graph"><button class="rainbow">Get to know us!</button></a>
+  <img id="arrow" src="{% static 'img/arrow.png' %}">
+  <img id="graph" src="{% static 'img/graph.png' %}">
+  <p id="story"><b>Minskintercaps</b> is a leading manufacturer of Belarusian
+    pharmaceutical industry and biologically active supplements in hard and soft gelatin
+    capsules.</p>
+    <div class="container flex">
+        <div class="item flex-item">
+            <img id="med" src="{% static 'img/med.png' %}">
+            <a href="{% url 'remedy:validol' %}"><button class="moremed">Learn more!</button></a>
+        </div>
+        <div class="item flex-item">
+            <img id="med" src="{% static 'img/oil.png' %}">
+            <a href="{% url 'remedy:magvit' %}"><button class="moreoil">Learn more!</button></a>
+        </div>
+        <div class="item flex-item">
+            <img id="med" src="{% static 'img/palm.png' %}">
+            <button class="morepalm">Learn more!</button>
+        </div>
+      </div>
+      <img id="map" src="{% static 'img/map.png' %}">
+      <p id="geo">Our products are highly cherished
+        by consumers of <b>Belarus and CIS countries</b>. We also operate in the markets of
+        <b>Southeast Asia, the Middle
+        East and the European Union</b>.
+        As we celebrate the success of our current partnerships, we warmly invite you 
+        to join our network, where together we can create meaningful synergies and embark 
+        on a journey of shared achievements.</p>
+        <div class="wrapper">
+
+            <p id="faq">FAQ</p>
+            <img id="heart" src="{% static 'img/heart.png' %}">
+            <div class="wrap-1">
+              <input type="radio" id="tab-1" name="tabs">
+              <label for="tab-1"><div style="overflow: hidden;">What are the benefits of capsules?</div><div class="cross"></div></label>
+              <div class="content">Capsules can improve the bioavailability of certain active ingredients by protecting them from the harsh environment of the gastrointestinal tract. Additionally, capsules can be formulated to release the active ingredient at a specific site in the body or over a controlled time period, optimizing drug absorption.</div>
+            </div>
+          
+            <div class="wrap-2">
+              <input type="radio" id="tab-2" name="tabs">
+              <label for="tab-2"><div>Why choose us?</div><div class="cross"></div></label>
+              <div class="content"><ul>
+                <li>20 years of experience in high-tech production of capsule molds, contract production of medication, dietary supplements and self care.</li>
+                <li>Our manufacturing approach complies with the requirements of TCP 030 "Good Manufacturing Practice" (GMP).</li>
+                <li>The production of biologically active supplements is certified for compliance with the requirements of the Regulations of the European Parliament and the Council.</li>
+                <li>The reliability and quality of Minskintercaps products can be backed up by customers from the CIS and EU countries.</li>
+              </ul></div>
+            </div>
+          
+            <div class="wrap-3">
+              <input type="radio" id="tab-3" name="tabs">
+              <label for="tab-3"><div>Can I crack and chew the capsules?</div><div class="cross"></div></label>
+              <div class="content">Capsules are not recommended to be cracked and chewed in order to prevent premature release of active agent.
+                Some ingredients of the capsules turn out to be quite intensive colorants. This are, for example, beta-carotene and  jet-black blueberry extract – the main active ingredients of Antioxycaps and Blueberry-MIC respectively. 
+                However, some capsules are absorbed through sublingual administration. For example, Validol-MIC capsules are designed to be placed under the tongue.</div>
+            </div>
+          </div>
+          <div id="slider">
+            <input type="radio" name="slider" id="slide1" checked>
+            <input type="radio" name="slider" id="slide2">
+            <input type="radio" name="slider" id="slide3">
+            <input type="radio" name="slider" id="slide4">
+            <div id="slides">
+               <div id="overflow">
+                  <div class="inner">
+                    {% for i in object_list %}
+                     <div class="slide slide_1">
+                        <div class="slide-content">
+                           <a href="{% url 'home:article' pk=i.pk %}"><img id="slideimg" src="{{ i.picture.url }}"></a>
+                        </div>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </div>
+            <div id="controls">
+            </div>
+            <div id="bullets">
+               <label for="slide1"></label>
+               <label for="slide2"></label>
+               <label for="slide3"></label>
+               <label for="slide4"></label>
+            </div>
+         </div>
+        <img id="test" src="{% static 'img/test.png' %}">
+        <img id="footimg" src="{% static 'img/foot.png' %}">
+        <a href="mailto:info@mic.by"> <img id="phone" src="{% static 'img/tlph.png' %}"></a>
+          <a href="https://www.instagram.com/minskintercaps?igsh=MTI1aHJmeGdoNTZ5" target="blank"><img id="inst" src="{% static 'img/inst.png' %}"></a>
+</body>
+</html>
